@@ -1,6 +1,7 @@
 FROM golang:1.17 AS builder
 ADD ./main.go main.go
 ADD ./service service
+ADD ./go.mod go.mod
 # Fetch dependencies
 RUN git config --global http.sslverify false
 RUN go get -d -v
