@@ -1,11 +1,22 @@
 FROM golang:1.17 AS builder
-ADD ./main.go main.go
-ADD ./service service
-ADD ./go.mod go.mod
-ADD ./go.sum go.sum
+ENV GO111MODULE=on
+
+WORKDIR /app
+
+#ADD ./main.go main.go
+#ADD ./service service
+#ADD ./go.mod go.mod
+#ADD ./go.sum go.sum
+
+COPY . .
 # Fetch dependencies
 RUN git config --global http.sslverify false
+
+RUN echo $(pwd)
+
 RUN go get -d -v
+
+
 
 # Build image as a truly static Go binary
 RUN CGO_ENABLED=0 GOOS=linux go build -o /social_graph_service -a -tags netgo -ldflags '-s -w' .

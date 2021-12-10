@@ -1,8 +1,14 @@
 FROM golang:1.17 AS builder
-ADD ./main.go main.go
-ADD ./service service
-ADD ./go.mod go.mod
-ADD ./go.sum go.sum
+ENV GO111MODULE=on
+
+WORKDIR /app
+
+#ADD ./main.go main.go
+#ADD ./service service
+#ADD ./go.mod go.mod
+#ADD ./go.sum go.sum
+
+COPY . .
 # Fetch dependencies
 RUN git config --global http.sslverify false
 RUN go get -d -v
