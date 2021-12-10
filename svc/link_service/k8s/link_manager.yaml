@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: link-manager
-        image: bbakla/delinkcious-link:0.2
+        image: bbakla/delinkcious-link:0.3
         ports:
         - containerPort: 8080
         envFrom:
