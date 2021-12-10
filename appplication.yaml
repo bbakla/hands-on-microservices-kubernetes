@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: link_service
+  name: link-service
   namespace: argocd
 spec:
   project: default
@@ -22,3 +22,27 @@ spec:
       selfHeal: true
       prune: true
 
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: user-service
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/bbakla/hands-on-microservices-kubernetes.git
+    targetRevision: HEAD
+    path: svc/user_service/k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hands-on-kubernetes
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
