@@ -1,10 +1,13 @@
 package service
 
 import (
+	"fmt"
 	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
+	"strconv"
 
 	lm "github.com/bbakla/hands-on-microservices-kubernetes/pkg/link_manager"
 	sgm "github.com/bbakla/hands-on-microservices-kubernetes/pkg/social_graph_client"
@@ -22,12 +25,37 @@ func Run() {
 		log.Fatal(err)
 	}
 
-	socialGraphClient, err := sgm.NewClient("localhost:9090")
+	sgHost := os.Getenv("SOCIAL_GRAPH_SERVICE_HOST")
+	if sgHost == "" {
+		sgHost = "localhost"
+	}
+
+	sgPort := os.Getenv("SOCIAL_GRAPH_SERVICE_PORT")
+	if sgPort == "" {
+		sgPort = "9090"
+	}
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	maxLinksPerUserStr := os.Getenv("MAX_LINKS_PER_USER")
+	if maxLinksPerUserStr == "" {
+		maxLinksPerUserStr = "10"
+	}
+
+	maxLinksPerUser, err := strconv.ParseInt(os.Getenv("MAX_LINKS_PER_USER"), 10, 64)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	svc, err := lm.NewLinkManager(store, socialGraphClient, nil)
+	socialGraphClient, err := sgm.NewClient(fmt.Sprintf("%s:%s", sgHost, sgPort))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	svc, err := lm.NewLinkManager(store, socialGraphClient, nil, maxLinksPerUser)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -9,6 +9,7 @@ type LinkManager struct {
 	linkStore          LinkStore
 	socialGraphManager om.SocialGraphManager
 	eventSink          om.LinkManagerEvents
+	maxLinksPerUser    int64
 }
 
 func (m *LinkManager) GetLinks(request om.GetLinksRequest) (result om.GetLinksResult, err error) {
@@ -106,7 +107,8 @@ func (m *LinkManager) DeleteLink(username string, url string) (err error) {
 
 func NewLinkManager(linkStore LinkStore,
 	socialGraphManager om.SocialGraphManager,
-	eventSink om.LinkManagerEvents) (om.LinkManager, error) {
+	eventSink om.LinkManagerEvents,
+	maxLinksPerUser int64) (om.LinkManager, error) {
 	if linkStore == nil {
 		return nil, errors.New("link store")
 	}
@@ -119,5 +121,6 @@ func NewLinkManager(linkStore LinkStore,
 		linkStore:          linkStore,
 		socialGraphManager: socialGraphManager,
 		eventSink:          eventSink,
+		maxLinksPerUser:    maxLinksPerUser,
 	}, nil
 }
