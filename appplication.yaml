@@ -12,7 +12,7 @@ spec:
     path: svc/link_service/k8s
   destination:
     server: https://kubernetes.default.svc
-    namespace: link-manager
+    namespace: hands-on-kubernetes
 
   syncPolicy:
     syncOptions:
