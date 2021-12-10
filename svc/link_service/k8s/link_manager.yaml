@@ -24,7 +24,7 @@ spec:
         - containerPort: 8080
         envFrom:
           - configMapRef:
-              name: argocd-cm
+              name: link-service-config
 ---
 apiVersion: v1
 kind: Service
