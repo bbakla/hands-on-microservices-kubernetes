@@ -14,7 +14,7 @@ type LinkManager struct {
 
 func (m *LinkManager) GetLinks(request om.GetLinksRequest) (result om.GetLinksResult, err error) {
 	if request.Username == "" {
-		err = errors.New("User name can't be empty")
+		err = errors.New("Userr name can't be empty")
 		return
 	}
 
