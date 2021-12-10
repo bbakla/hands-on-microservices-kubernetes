@@ -1,7 +1,8 @@
-FROM golang:1.11 AS builder
+FROM golang:1.17 AS builder
 ADD ./main.go main.go
 ADD ./service service
 # Fetch dependencies
+RUN git config --global http.sslverify false
 RUN go get -d -v
 
 # Build image as a truly static Go binary
