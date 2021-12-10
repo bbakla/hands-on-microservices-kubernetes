@@ -1,12 +1,12 @@
 package service
 
 import (
-	"github.com/the-gigi/delinkcious/pkg/db_util"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
 	"log"
 	"net/http"
 
+	sgm "github.com/bbakla/hands-on-microservices-kubernetes/pkg/user_manager"
 	httptransport "github.com/go-kit/kit/transport/http"
-	sgm "github.com/the-gigi/delinkcious/pkg/user_manager"
 )
 
 func Run() {

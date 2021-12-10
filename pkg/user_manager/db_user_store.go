@@ -3,9 +3,9 @@ package user_manager
 import (
 	"database/sql"
 	sq "github.com/Masterminds/squirrel"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
+	om "github.com/bbakla/hands-on-microservices-kubernetes/pkg/object_model"
 	_ "github.com/lib/pq"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"math/rand"
 	"strconv"
 )

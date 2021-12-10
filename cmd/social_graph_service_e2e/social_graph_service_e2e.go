@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/social_graph_client"
 	_ "github.com/lib/pq"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
-	"github.com/the-gigi/delinkcious/pkg/social_graph_client"
 	"log"
 	"os"
 	"os/exec"

@@ -1,9 +1,9 @@
 package service
 
 import (
+	sgm "github.com/bbakla/hands-on-microservices-kubernetes/pkg/social_graph_manager"
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
-	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_manager"
 	"log"
 	"net/http"
 	"os"

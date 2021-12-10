@@ -2,8 +2,8 @@ package link_manager
 
 import (
 	"errors"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
+	om "github.com/bbakla/hands-on-microservices-kubernetes/pkg/object_model"
 	"time"
 
 	"database/sql"

@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/link_manager_client"
+	om "github.com/bbakla/hands-on-microservices-kubernetes/pkg/object_model"
 	_ "github.com/lib/pq"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
-	"github.com/the-gigi/delinkcious/pkg/link_manager_client"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"log"
 	"os"
 	"os/exec"
@@ -77,7 +77,7 @@ func main() {
 	log.Print("gigi's links:", links)
 
 	err = cli.AddLink(om.AddLinkRequest{Username: "gigi",
-		Url:   "https://github.com/the-gigi",
+		Url:   "https://github.com/bbakla",
 		Title: "Gigi on Github",
 		Tags:  map[string]bool{"programming": true}})
 	check(err)
@@ -85,13 +85,13 @@ func main() {
 	check(err)
 	log.Print("gigi's links:", links)
 
-	err = cli.UpdateLink(om.UpdateLinkRequest{Username: "gigi",
-		Url:         "https://github.com/the-gigi",
+	err = cli.UpdateLink(om.UpdateLinkRequest{Username: "bbakla",
+		Url:         "https://github.com/bbakla",
 		Description: "Most of my open source code is here"},
 	)
 
 	check(err)
-	links, err = cli.GetLinks(om.GetLinksRequest{Username: "gigi"})
+	links, err = cli.GetLinks(om.GetLinksRequest{Username: "bbakla"})
 	check(err)
 	log.Print("gigi's links:", links)
 }

@@ -11,8 +11,8 @@ import (
 
 import (
 	"context"
+	om "github.com/bbakla/hands-on-microservices-kubernetes/pkg/object_model"
 	httptransport "github.com/go-kit/kit/transport/http"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
 )
 
 func NewClient(baseURL string) (om.LinkManager, error) {

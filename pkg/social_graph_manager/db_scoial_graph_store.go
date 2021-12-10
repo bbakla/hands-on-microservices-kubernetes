@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"errors"
 	sq "github.com/Masterminds/squirrel"
+	"github.com/bbakla/hands-on-microservices-kubernetes/pkg/db_util"
 	_ "github.com/lib/pq"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
 )
 
 type DbSocialGraphStore struct {
