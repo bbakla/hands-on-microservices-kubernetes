@@ -22,6 +22,11 @@ spec:
         image: bbakla/delinkcious-link:0.1
         ports:
         - containerPort: 8080
+        envFrom:
+          - configMapRef:
+              name: link-service-config
+
+
 ---
 apiVersion: v1
 kind: Service
