@@ -25,7 +25,6 @@ spec:
         envFrom:
           - configMapRef:
               name: link-manager-config
-
 ---
 apiVersion: v1
 kind: Service
