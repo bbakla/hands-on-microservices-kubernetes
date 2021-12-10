@@ -1,7 +1,7 @@
 github.com/Masterminds/squirrel v0.0.0-20181030160206-3ba160b0147f h1:8JBQSKzsc40IAP5tAKEq3mwtINgeJnzN9CmS5nn4wTM=
 github.com/Masterminds/squirrel v0.0.0-20181030160206-3ba160b0147f/go.mod h1:xnKTFzjGUiZtiOagBsfnvomW+nJg2usB1ZpordQWqNM=
-github.com/bbakla/hands-on-microservices-kubernetes v0.0.0-20211210225201-73a889a6e8d6 h1:rdn3COEL6ZFHb13U+uAbxlyi2SvwEeRS1KQeN4PE47c=
-github.com/bbakla/hands-on-microservices-kubernetes v0.0.0-20211210225201-73a889a6e8d6/go.mod h1:NrdL5tKnsgokLIEe0whw/zp73M+vUtK2ChSDQ385Yv0=
+github.com/bbakla/hands-on-microservices-kubernetes v0.0.0-20211210234106-5a2c2199e2fc h1:1mhVKsQQ52esY++m/lfGXsu/o9jy9YkpXppbbPZpww8=
+github.com/bbakla/hands-on-microservices-kubernetes v0.0.0-20211210234106-5a2c2199e2fc/go.mod h1:NrdL5tKnsgokLIEe0whw/zp73M+vUtK2ChSDQ385Yv0=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/go-kit/kit v0.12.0 h1:e4o3o3IsBfAKQh5Qbbiqyfu97Ku7jrO/JbohvztANh4=
 github.com/go-kit/kit v0.12.0/go.mod h1:lHd+EkCZPIwYItmGDDRdhinkzX2A1sj+M9biaEaizzs=
