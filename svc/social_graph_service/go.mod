@@ -1,4 +1,4 @@
-module github.com/bbakla/hands-on-microservices-kubernetes/svc/link_service
+module github.com/bbakla/hands-on-microservices-kubernetes/svc/social_graph_service
 
 go 1.17
 

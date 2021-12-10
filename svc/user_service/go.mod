@@ -1,11 +1,10 @@
-module github.com/bbakla/hands-on-microservices-kubernetes/svc/link_service
+module github.com/bbakla/hands-on-microservices-kubernetes/svc/user_service
 
 go 1.17
 
 require (
 	github.com/bbakla/hands-on-microservices-kubernetes v0.0.0-20211210205357-423aeb3ee312
 	github.com/go-kit/kit v0.12.0
-	github.com/gorilla/mux v1.8.0
 )
 
 require (
