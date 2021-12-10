@@ -1,11 +1,12 @@
-FROM golang:1.11 AS builder
+FROM golang:1.17 AS builder
 ADD ./main.go main.go
 ADD ./service service
 # Fetch dependencies
 RUN git config --global http.sslverify false
 RUN go get -d -v
 
-# Build image as a truly static Go binary
+# Build image as a truly static Go binar
+RUN export GO111MODULE="on"
 RUN CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
