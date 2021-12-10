@@ -3,11 +3,6 @@ ENV GO111MODULE=on
 
 WORKDIR /app
 
-#ADD ./main.go main.go
-#ADD ./service service
-#ADD ./go.mod go.mod
-#ADD ./go.sum go.sum
-
 COPY . .
 # Fetch dependencies
 RUN git config --global http.sslverify false

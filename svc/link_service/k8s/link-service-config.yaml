@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: link-service-config
+  name: argocd-cm
   namespace: argocd
   labels:
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/name: link-service-config
+    app.kubernetes.io/name: argocd-cm
 data:
   MAX_LINKS_PER_USER: "10"
   PORT: "8080"
