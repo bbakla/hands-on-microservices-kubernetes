@@ -20,7 +20,7 @@ spec:
       containers:
       - name: link-manager
         image: bbakla/delinkcious-link:0.3.1
-        imagePullPolicy: Always
+      #  imagePullPolicy: Always
         ports:
         - containerPort: 8080
         envFrom:
