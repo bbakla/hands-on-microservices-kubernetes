@@ -20,13 +20,14 @@ spec:
       containers:
       - name: link-manager
         image: bbakla/delinkcious-link:0.3.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        envFrom:
-          - configMapRef:
-             name: link-service-conf
+     #   envFrom:
+      #    - configMapRef:
+     #        name: link-service-conf
         volumeMounts:
-          - mountPath: /etc/config
+          - mountPath: conf
             name: config-volume
       volumes:
         - name: config-volume
