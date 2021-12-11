@@ -33,7 +33,7 @@ spec:
         - name: config-volume
           configMap:
             name: link-service-conf
-      restartPolicy: Never
+      restartPolicy: Always
 
 ---
 apiVersion: v1
