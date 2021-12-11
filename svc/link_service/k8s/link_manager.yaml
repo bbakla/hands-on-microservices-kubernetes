@@ -32,7 +32,7 @@ spec:
         - name: config-volume
           configMap:
             name: link-service-conf
-      restartPolicy: OnFailure
+   #   restartPolicy: OnFailure
 
 ---
 apiVersion: v1
