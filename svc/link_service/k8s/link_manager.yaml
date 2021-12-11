@@ -23,16 +23,16 @@ spec:
       #  imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        envFrom:
-          - configMapRef:
-             name: link-service-conf
-   #     volumeMounts:
-    #      - mountPath: conf
-     #       name: config-volume
-     # volumes:
-      #  - name: config-volume
-       #   configMap:
-        #    name: link-service-conf
+    #    envFrom:
+     #     - configMapRef:
+      #       name: link-service-conf
+        volumeMounts:
+          - mountPath: conf
+            name: config-volume
+      volumes:
+        - name: config-volume
+          configMap:
+            name: link-service-conf
    #   restartPolicy: OnFailure
 
 ---
