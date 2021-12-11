@@ -49,7 +49,7 @@ func Run() {
 
 	maxLinksPerUser, err := strconv.ParseInt(os.Getenv("MAX_LINKS_PER_USER"), 10, 64)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("error with parsing %s : %v", maxLinksPerUserStr, err)
 	}
 
 	socialGraphClient, err := sgm.NewClient(fmt.Sprintf("%s:%s", sgHost, sgPort))
