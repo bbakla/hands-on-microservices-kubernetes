@@ -7,5 +7,5 @@ metadata:
     app.kubernetes.io/part-of: hands-on-kubernetes
     app.kubernetes.io/name: link-service-conf
 data:
-  MAX_LINKS_PER_USER: "101"
+  MAX_LINKS_PER_USER: "141"
   PORT: "8080"
